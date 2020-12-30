@@ -1,0 +1,2 @@
+# pythonRabbitMQ
+Basics of RabbitMQ
