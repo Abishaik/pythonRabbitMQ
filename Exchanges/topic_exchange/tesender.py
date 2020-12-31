@@ -13,7 +13,7 @@ try:
         channel.basic_publish(exchange='topic_logs', routing_key=routing_key, body=message)
         print(" [x] Sent %r:%r" % (routing_key, message))
 except KeyboardInterrupt:
-    print('Interrupted')
+    print('Interrupted') 
     connection.close()
     try:
         sys.exit(0)
