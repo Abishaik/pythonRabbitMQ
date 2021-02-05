@@ -10,7 +10,7 @@ channel.exchange_declare(exchange='testing',
 
 result = channel.queue_declare(exclusive=True)
 if not result:
-    print 'Queue didnt declare properly!'
+    print ('Queue didnt declare properly!')
     sys.exit(1)
 queue_name = result.method.queue
 

@@ -1,3 +1,4 @@
+# comments are same as in fanout_receiver1
 import pika
 
 connection = pika.BlockingConnection(
@@ -20,3 +21,5 @@ channel.basic_consume(
     queue=sampleq1, on_message_callback=callback, auto_ack=True)
 
 channel.start_consuming()
+
+#working @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

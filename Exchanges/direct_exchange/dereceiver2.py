@@ -1,3 +1,5 @@
+# same comments given in dereceiver2
+
 import pika
 import sys
 
@@ -24,3 +26,5 @@ channel.basic_consume(
     queue=queue_name, on_message_callback=callback, auto_ack=True)
 
 channel.start_consuming()
+
+# Working @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

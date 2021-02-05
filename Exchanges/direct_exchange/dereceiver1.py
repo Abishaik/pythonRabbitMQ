@@ -1,6 +1,8 @@
+# Requirements
 import pika
 import sys
 
+# connecting to rabbitmq routes
 connection = pika.BlockingConnection(
     pika.ConnectionParameters(host='localhost'))
 channel = connection.channel()
@@ -13,6 +15,7 @@ queue_name = result.method.queue
 severity ='1'
 channel.queue_bind(exchange='direct_logs', queue=queue_name, routing_key=severity)
 
+# initial event :
 print(' [*] Waiting for logs. To exit press CTRL+C')
 
 
@@ -23,4 +26,7 @@ def callback(ch, method, properties, body):
 channel.basic_consume(
     queue=queue_name, on_message_callback=callback, auto_ack=True)
 
+# to start consuming from rabbitmq server
 channel.start_consuming()
+
+# working @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

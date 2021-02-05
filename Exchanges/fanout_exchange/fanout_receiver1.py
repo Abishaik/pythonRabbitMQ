@@ -1,5 +1,7 @@
+# Requirements
 import pika
 
+# Connection
 connection = pika.BlockingConnection(
     pika.ConnectionParameters(host='localhost'))
 channel = connection.channel()
@@ -19,4 +21,7 @@ def callback(ch, method, properties, body):
 channel.basic_consume(
     queue=queue_name, on_message_callback=callback, auto_ack=True)
 
+# Start consume
 channel.start_consuming()
+
+# Working @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
